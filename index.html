@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti, bella 💛</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: "Trebuchet MS", sans-serif;
+    background:
+        radial-gradient(circle at 50% 30%, #fff9d9 0%, #fff3b8 35%, #f7d96b 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scene {
+    width: min(94vw, 430px);
+    height: min(94vh, 720px);
+    position: relative;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    background: linear-gradient(145deg, #fffdf0, #fff3b4);
+    box-shadow:
+        0 25px 70px rgba(121, 86, 10, .25),
+        inset 0 0 0 2px rgba(255,255,255,.7);
+}
+
+/* =========================
+   PORTADA
+========================= */
+
+.cover {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 50% 35%, #fffef0 0%, #fff7c9 45%, #ffe994 100%);
+    transition: opacity .9s ease, transform .9s ease;
+}
+
+.cover.opened {
+    opacity: 0;
+    transform: scale(1.08);
+    pointer-events: none;
+}
+
+.cover-title {
+    color: #765500;
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.cover-subtitle {
+    margin-top: 22px;
+    color: #9a7312;
+    font-size: 14px;
+    opacity: .8;
+}
+
+/* =========================
+   CORAZÓN
+========================= */
+
+.heart {
+    width: 34px;
+    height: 34px;
+    position: relative;
+    transform: rotate(-45deg);
+    background: #f2c629;
+    animation: heartbeat 1.5s infinite ease-in-out;
+    margin-bottom: 20px;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    border-radius: 50%;
+    background: #f2c629;
+}
+
+.heart::before {
+    top: -17px;
+}
+
+.heart::after {
+    left: 17px;
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.13); }
+}
+
+/* =========================
+   POMPOMPURIN PORTADA
+========================= */
+
+.pompom {
+    width: 180px;
+    height: 190px;
+    position: relative;
+    animation: pomFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes pomFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+}
+
+.pom-body {
+    position: absolute;
+    width: 145px;
+    height: 130px;
+    left: 18px;
+    bottom: 5px;
+    background: #f7cf3c;
+    border-radius: 50% 50% 43% 43%;
+    box-shadow: inset -8px -8px 0 rgba(190,145,20,.12);
+}
+
+.pom-ear {
+    position: absolute;
+    width: 58px;
+    height: 36px;
+    background: #e7b92c;
+    border-radius: 50%;
+    top: 38px;
+}
+
+.pom-ear-left {
+    left: 0;
+    transform: rotate(18deg);
+}
+
+.pom-ear-right {
+    right: 0;
+    transform: rotate(-18deg);
+}
+
+.beret {
+    position: absolute;
+    z-index: 5;
+    width: 78px;
+    height: 29px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg);
+    top: 2px;
+    background: #9b691b;
+    border-radius: 50%;
+}
+
+.beret::after {
+    content: "";
+    position: absolute;
+    width: 58px;
+    height: 18px;
+    left: 9px;
+    top: -6px;
+    background: #b27b21;
+    border-radius: 50%;
+}
+
+.pom-eye {
+    position: absolute;
+    width: 10px;
+    height: 15px;
+    background: #4c3411;
+    border-radius: 50%;
+    top: 51px;
+    z-index: 3;
+}
+
+.pom-eye-left {
+    left: 51px;
+}
+
+.pom-eye-right {
+    right: 51px;
+}
+
+.pom-cheek {
+    position: absolute;
+    width: 18px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e9a83b;
+    top: 77px;
+    opacity: .7;
+}
+
+.pom-cheek-left {
+    left: 31px;
+}
+
+.pom-cheek-right {
+    right: 31px;
+}
+
+.pom-mouth {
+    position: absolute;
+    width: 18px;
+    height: 9px;
+    border-bottom: 3px solid #5a3a0d;
+    border-radius: 50%;
+    left: 63px;
+    top: 78px;
+}
+
+.pom-arm {
+    position: absolute;
+    width: 42px;
+    height: 15px;
+    background: #e9bd31;
+    border-radius: 50%;
+    top: 112px;
+}
+
+.pom-arm-left {
+    left: 0;
+    transform: rotate(25deg);
+}
+
+.pom-arm-right {
+    right: 0;
+    transform: rotate(-25deg);
+}
+
+.pom-foot {
+    position: absolute;
+    width: 42px;
+    height: 19px;
+    background: #dcae28;
+    border-radius: 50%;
+    bottom: -5px;
+}
+
+.pom-foot-left {
+    left: 30px;
+}
+
+.pom-foot-right {
+    right: 30px;
+}
+
+/* =========================
+   INTERIOR
+========================= */
+
+.inside {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 38px 20px 25px;
+}
+
+/* =========================
+   FRASE
+========================= */
+
+.message {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: 1s ease .5s;
+    z-index: 10;
+}
+
+.card.opened .message {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.romantic-phrase {
+    font-family: "Baskerville", "Palatino Linotype",
+                 "Book Antiqua", Georgia, serif;
+    font-size: 23px;
+    line-height: 1.4;
+    font-style: italic;
+    font-weight: 500;
+    color: #171717;
+    max-width: 335px;
+    margin: 0 auto 12px;
+    text-align: center;
+    letter-spacing: .3px;
+    text-shadow: 0 1px 1px rgba(255,255,255,.65);
+}
+
+.message h1 {
+    color: #755400;
+    font-size: 28px;
+    margin-top: 4px;
+}
+
+.yellow-heart {
+    display: inline-block;
+    font-size: 29px;
+    animation: tinyHeart 1.8s infinite ease-in-out;
+}
+
+@keyframes tinyHeart {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+}
+
+/* =========================
+   RAMO
+========================= */
+
+.bouquet {
+    position: relative;
+    width: 350px;
+    height: 370px;
+    margin-top: 5px;
+}
+
+/* TALLOS */
+
+.stem {
+    position: absolute;
+    width: 7px;
+    height: 220px;
+    bottom: 52px;
+    left: 50%;
+    transform-origin: bottom center;
+    background: linear-gradient(to right, #527b31, #6c963e, #456a28);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+/* Tallos alineados con sus flores */
+
+.stem-sunflower-left {
+    height: 225px;
+    transform: translateX(-50%) rotate(-18deg);
+}
+
+.stem-sunflower-center {
+    height: 250px;
+    transform: translateX(-50%) rotate(-1deg);
+}
+
+.stem-sunflower-right {
+    height: 225px;
+    transform: translateX(-50%) rotate(17deg);
+}
+
+.stem-rose-left {
+    height: 200px;
+    transform: translateX(-50%) rotate(-30deg);
+}
+
+.stem-rose-midleft {
+    height: 225px;
+    transform: translateX(-50%) rotate(-12deg);
+}
+
+.stem-rose-midright {
+    height: 220px;
+    transform: translateX(-50%) rotate(11deg);
+}
+
+.stem-rose-right {
+    height: 200px;
+    transform: translateX(-50%) rotate(29deg);
+}
+
+/* =========================
+   HOJAS
+========================= */
+
+.leaf {
+    position: absolute;
+    width: 45px;
+    height: 22px;
+    background: #5d8c36;
+    border-radius: 100% 0 100% 0;
+    z-index: 2;
+}
+
+.leaf-left-1 {
+    left: 92px;
+    bottom: 130px;
+    transform: rotate(28deg);
+}
+
+.leaf-left-2 {
+    left: 119px;
+    bottom: 96px;
+    transform: rotate(-25deg);
+}
+
+.leaf-left-3 {
+    left: 62px;
+    bottom: 80px;
+    transform: rotate(40deg);
+}
+
+.leaf-right-1 {
+    right: 91px;
+    bottom: 124px;
+    transform: rotate(-25deg) scaleX(-1);
+}
+
+.leaf-right-2 {
+    right: 120px;
+    bottom: 90px;
+    transform: rotate(30deg) scaleX(-1);
+}
+
+.leaf-right-3 {
+    right: 64px;
+    bottom: 73px;
+    transform: rotate(-40deg) scaleX(-1);
+}
+
+/* =========================
+   PASTITO
+========================= */
+
+.grass {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    width: 260px;
+    height: 48px;
+    transform: translateX(-50%);
+    z-index: 8;
+}
+
+.grass-ground {
+    position: absolute;
+    width: 255px;
+    height: 16px;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #547d31;
+    border-radius: 50%;
+    opacity: .9;
+}
+
+.grass-blade {
+    position: absolute;
+    bottom: 0;
+    width: 7px;
+    height: 35px;
+    background: linear-gradient(to top, #426b29, #79a84b);
+    border-radius: 100% 0 100% 0;
+    transform-origin: bottom center;
+}
+
+.grass-blade:nth-child(2) {
+    left: 8px;
+    transform: rotate(-30deg);
+}
+
+.grass-blade:nth-child(3) {
+    left: 25px;
+    height: 28px;
+    transform: rotate(-18deg);
+}
+
+.grass-blade:nth-child(4) {
+    left: 43px;
+    height: 40px;
+    transform: rotate(-8deg);
+}
+
+.grass-blade:nth-child(5) {
+    left: 62px;
+    height: 32px;
+    transform: rotate(12deg);
+}
+
+.grass-blade:nth-child(6) {
+    left: 80px;
+    height: 43px;
+    transform: rotate(-5deg);
+}
+
+.grass-blade:nth-child(7) {
+    left: 101px;
+    height: 31px;
+    transform: rotate(18deg);
+}
+
+.grass-blade:nth-child(8) {
+    left: 122px;
+    height: 42px;
+    transform: rotate(-10deg);
+}
+
+.grass-blade:nth-child(9) {
+    left: 143px;
+    height: 34px;
+    transform: rotate(10deg);
+}
+
+.grass-blade:nth-child(10) {
+    left: 164px;
+    height: 42px;
+    transform: rotate(-16deg);
+}
+
+.grass-blade:nth-child(11) {
+    left: 185px;
+    height: 31px;
+    transform: rotate(17deg);
+}
+
+.grass-blade:nth-child(12) {
+    left: 207px;
+    height: 39px;
+    transform: rotate(-12deg);
+}
+
+.grass-blade:nth-child(13) {
+    left: 228px;
+    height: 29px;
+    transform: rotate(20deg);
+}
+
+/* =========================
+   GIRASOLES
+========================= */
+
+.sunflower {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 5;
+    opacity: 0;
+    transform: scale(.6);
+    transition: 1s ease;
+}
+
+.card.opened .sunflower {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.sunflower-left {
+    left: 33px;
+    top: 35px;
+    transition-delay: .25s;
+}
+
+.sunflower-center {
+    left: 125px;
+    top: 5px;
+    width: 110px;
+    height: 110px;
+    transition-delay: .4s;
+}
+
+.sunflower-right {
+    right: 29px;
+    top: 43px;
+    transition-delay: .55s;
+}
+
+.sunflower-petal {
+    position: absolute;
+    width: 27px;
+    height: 47px;
+    left: 50%;
+    top: 50%;
+    transform-origin: center bottom;
+    margin-left: -13.5px;
+    margin-top: -47px;
+    background: #f5bd18;
+    border-radius: 50% 50% 45% 45%;
+}
+
+.sunflower-petal:nth-child(1) {
+    transform: rotate(0deg) translateY(-24px);
+}
+
+.sunflower-petal:nth-child(2) {
+    transform: rotate(45deg) translateY(-24px);
+}
+
+.sunflower-petal:nth-child(3) {
+    transform: rotate(90deg) translateY(-24px);
+}
+
+.sunflower-petal:nth-child(4) {
+    transform: rotate(135deg) translateY(-24px);
+}
+
+.sunflower-petal:nth-child(5) {
+    transform: rotate(180deg) translateY(-24px);
+}
+
+.sunflower-petal:nth-child(6) {
+    transform: rotate(225deg) translateY(-24px);
+}
+
+.sunflower-petal:nth-child(7) {
+    transform: rotate(270deg) translateY(-24px);
+}
+
+.sunflower-petal:nth-child(8) {
+    transform: rotate(315deg) translateY(-24px);
+}
+
+.sunflower-center-circle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background:
+        radial-gradient(circle,
+        #42270b 10%,
+        #59350d 35%,
+        #75470d 100%);
+    border-radius: 50%;
+}
+
+/* =========================
+   ROSAS
+========================= */
+
+.rose {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    z-index: 7;
+    opacity: 0;
+    transform: scale(.55);
+    transition: 1s ease;
+}
+
+.card.opened .rose {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.rose-left {
+    left: 75px;
+    top: 105px;
+    transition-delay: .65s;
+}
+
+.rose-midleft {
+    left: 118px;
+    top: 77px;
+    transition-delay: .8s;
+}
+
+.rose-midright {
+    right: 110px;
+    top: 88px;
+    transition-delay: .95s;
+}
+
+.rose-right {
+    right: 68px;
+    top: 120px;
+    transition-delay: 1.1s;
+}
+
+.rose-petal {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    border-radius: 50% 50% 48% 48%;
+    background: #d94b52;
+}
+
+.rose-pink .rose-petal {
+    background: #ec7180;
+}
+
+.rose-peach .rose-petal {
+    background: #ed8b67;
+}
+
+.rose-petal-1 {
+    left: 17px;
+    top: 3px;
+}
+
+.rose-petal-2 {
+    left: 2px;
+    top: 20px;
+}
+
+.rose-petal-3 {
+    right: 2px;
+    top: 20px;
+}
+
+.rose-petal-4 {
+    left: 17px;
+    bottom: 1px;
+}
+
+.rose-center {
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    left: 20px;
+    top: 20px;
+    border-radius: 50%;
+    background: #b92d3d;
+}
+
+/* =========================
+   MOÑO
+========================= */
+
+.bow {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92px;
+    height: 65px;
+    z-index: 12;
+}
+
+.bow-left,
+.bow-right {
+    position: absolute;
+    width: 52px;
+    height: 43px;
+    top: 3px;
+    background: #d99a20;
+}
+
+.bow-left {
+    left: 0;
+    border-radius: 70% 20% 60% 30%;
+    transform: rotate(18deg);
+}
+
+.bow-right {
+    right: 0;
+    border-radius: 20% 70% 30% 60%;
+    transform: rotate(-18deg);
+}
+
+.bow-center {
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    left: 50%;
+    top: 12px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #efbd32;
+    z-index: 2;
+}
+
+.bow-tail-left,
+.bow-tail-right {
+    position: absolute;
+    width: 32px;
+    height: 50px;
+    top: 31px;
+    background: #d99a20;
+}
+
+.bow-tail-left {
+    left: 16px;
+    transform: rotate(18deg);
+    clip-path: polygon(0 0,100% 0,70% 100%,35% 82%);
+}
+
+.bow-tail-right {
+    right: 16px;
+    transform: rotate(-18deg);
+    clip-path: polygon(0 0,100% 0,65% 82%,30% 100%);
+}
+
+/* =========================
+   POMPOMPURIN INTERIOR
+========================= */
+
+.inside-pompom {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(.63);
+    transform-origin: bottom center;
+    z-index: 15;
+    opacity: 0;
+    transition: 1s ease 1.15s;
+}
+
+.card.opened .inside-pompom {
+    opacity: 1;
+    transform: translateX(-50%) scale(.63);
+}
+
+/* =========================
+   BRILLOS
+========================= */
+
+.sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 12px white;
+    animation: sparkle 2s infinite ease-in-out;
+}
+
+.sparkle-1 {
+    top: 12%;
+    left: 14%;
+}
+
+.sparkle-2 {
+    top: 20%;
+    right: 12%;
+    animation-delay: .5s;
+}
+
+.sparkle-3 {
+    top: 45%;
+    left: 7%;
+    animation-delay: 1s;
+}
+
+.sparkle-4 {
+    top: 52%;
+    right: 8%;
+    animation-delay: 1.5s;
+}
+
+@keyframes sparkle {
+    0%,100% {
+        opacity: .2;
+        transform: scale(.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+}
+
+/* =========================
+   BOTÓN
+========================= */
+
+.open-button {
+    border: none;
+    padding: 13px 30px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #efc83e, #d9a91c);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(180,130,20,.25);
+    transition: .25s ease;
+}
+
+.open-button:hover {
+    transform: translateY(-2px);
+}
+
+.open-button:active {
+    transform: scale(.96);
+}
+
+/* =========================
+   MOVIMIENTO FLORES
+========================= */
+
+.card.opened .sunflower-center {
+    animation: flowerCenter 4s ease-in-out infinite;
+}
+
+.card.opened .sunflower-left {
+    animation: flowerLeft 4.5s ease-in-out infinite;
+}
+
+.card.opened .sunflower-right {
+    animation: flowerRight 4.2s ease-in-out infinite;
+}
+
+@keyframes flowerCenter {
+    0%,100% { rotate: -1deg; }
+    50% { rotate: 1deg; }
+}
+
+@keyframes flowerLeft {
+    0%,100% { rotate: -1deg; }
+    50% { rotate: 2deg; }
+}
+
+@keyframes flowerRight {
+    0%,100% { rotate: 1deg; }
+    50% { rotate: -2deg; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+
+<div class="card" id="card">
+
+<!-- =========================
+     PORTADA
+========================= -->
+
+<div class="cover" id="cover">
+
+    <span class="sparkle sparkle-1"></span>
+    <span class="sparkle sparkle-2"></span>
+    <span class="sparkle sparkle-3"></span>
+    <span class="sparkle sparkle-4"></span>
+
+    <div class="cover-title">
+        Tengo algo para ti...
+    </div>
+
+    <div class="heart"></div>
+
+    <div class="pompom">
+
+        <div class="pom-ear pom-ear-left"></div>
+        <div class="pom-ear pom-ear-right"></div>
+
+        <div class="beret"></div>
+
+        <div class="pom-body">
+
+            <div class="pom-eye pom-eye-left"></div>
+            <div class="pom-eye pom-eye-right"></div>
+
+            <div class="pom-cheek pom-cheek-left"></div>
+            <div class="pom-cheek pom-cheek-right"></div>
+
+            <div class="pom-mouth"></div>
+
+            <div class="pom-arm pom-arm-left"></div>
+            <div class="pom-arm pom-arm-right"></div>
+
+            <div class="pom-foot pom-foot-left"></div>
+            <div class="pom-foot pom-foot-right"></div>
+
+        </div>
+    </div>
+
+    <button class="open-button" onclick="openCard()">
+        Abrir 💛
+    </button>
+
+    <div class="cover-subtitle">
+    eeh no sabia que hacer
+    </div>
+
+</div>
+
+<!-- =========================
+     INTERIOR
+========================= -->
+
+<div class="inside">
+
+    <div class="message">
+
+        <div class="romantic-phrase">
+            “Eres mis ganas de regalar flores<br>
+            y mi gusto por escribir cartas”
+        </div>
+
+        <h1>
+            Un detalle para alegrar tu noche
+        
+            <span class="yellow-heart">💛</span>
+        </h1>
+
+    </div>
+
+    <div class="bouquet">
+
+        <!-- TALLOS -->
+
+        <div class="stem stem-sunflower-left"></div>
+        <div class="stem stem-sunflower-center"></div>
+        <div class="stem stem-sunflower-right"></div>
+
+        <div class="stem stem-rose-left"></div>
+        <div class="stem stem-rose-midleft"></div>
+        <div class="stem stem-rose-midright"></div>
+        <div class="stem stem-rose-right"></div>
+
+        <!-- HOJAS -->
+
+        <div class="leaf leaf-left-1"></div>
+        <div class="leaf leaf-left-2"></div>
+        <div class="leaf leaf-left-3"></div>
+
+        <div class="leaf leaf-right-1"></div>
+        <div class="leaf leaf-right-2"></div>
+        <div class="leaf leaf-right-3"></div>
+
+        <!-- GIRASOL IZQUIERDO -->
+
+        <div class="sunflower sunflower-left">
+
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+
+            <div class="sunflower-center-circle"></div>
+
+        </div>
+
+        <!-- GIRASOL CENTRAL -->
+
+        <div class="sunflower sunflower-center">
+
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+
+            <div class="sunflower-center-circle"></div>
+
+        </div>
+
+        <!-- GIRASOL DERECHO -->
+
+        <div class="sunflower sunflower-right">
+
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+            <div class="sunflower-petal"></div>
+
+            <div class="sunflower-center-circle"></div>
+
+        </div>
+
+        <!-- ROSA ROJA -->
+
+        <div class="rose rose-left">
+
+            <div class="rose-petal rose-petal-1"></div>
+            <div class="rose-petal rose-petal-2"></div>
+            <div class="rose-petal rose-petal-3"></div>
+            <div class="rose-petal rose-petal-4"></div>
+
+            <div class="rose-center"></div>
+
+        </div>
+
+        <!-- ROSA ROSADA -->
+
+        <div class="rose rose-pink rose-midleft">
+
+            <div class="rose-petal rose-petal-1"></div>
+            <div class="rose-petal rose-petal-2"></div>
+            <div class="rose-petal rose-petal-3"></div>
+            <div class="rose-petal rose-petal-4"></div>
+
+            <div class="rose-center"></div>
+
+        </div>
+
+        <!-- ROSA DURAZNO -->
+
+        <div class="rose rose-peach rose-midright">
+
+            <div class="rose-petal rose-petal-1"></div>
+            <div class="rose-petal rose-petal-2"></div>
+            <div class="rose-petal rose-petal-3"></div>
+            <div class="rose-petal rose-petal-4"></div>
+
+            <div class="rose-center"></div>
+
+        </div>
+
+        <!-- ROSA ROJA DERECHA -->
+
+        <div class="rose rose-right">
+
+            <div class="rose-petal rose-petal-1"></div>
+            <div class="rose-petal rose-petal-2"></div>
+            <div class="rose-petal rose-petal-3"></div>
+            <div class="rose-petal rose-petal-4"></div>
+
+            <div class="rose-center"></div>
+
+        </div>
+
+        <!-- PASTITO -->
+
+        <div class="grass">
+
+            <div class="grass-ground"></div>
+
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+
+        </div>
+
+        <!-- MOÑO -->
+
+        <div class="bow">
+
+            <div class="bow-left"></div>
+            <div class="bow-right"></div>
+
+            <div class="bow-tail-left"></div>
+            <div class="bow-tail-right"></div>
+
+            <div class="bow-center"></div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         POMPOMPURIN INTERIOR
+    ========================= -->
+
+    <div class="inside-pompom">
+
+        <div class="pompom">
+
+            <div class="pom-ear pom-ear-left"></div>
+            <div class="pom-ear pom-ear-right"></div>
+
+            <div class="beret"></div>
+
+            <div class="pom-body">
+
+                <div class="pom-eye pom-eye-left"></div>
+                <div class="pom-eye pom-eye-right"></div>
+
+                <div class="pom-cheek pom-cheek-left"></div>
+                <div class="pom-cheek pom-cheek-right"></div>
+
+                <div class="pom-mouth"></div>
+
+                <div class="pom-arm pom-arm-left"></div>
+                <div class="pom-arm pom-arm-right"></div>
+
+                <div class="pom-foot pom-foot-left"></div>
+                <div class="pom-foot pom-foot-right"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+</div>
+
+<script>
+function openCard() {
+
+    const card = document.getElementById("card");
+    const cover = document.getElementById("cover");
+
+    card.classList.add("opened");
+    cover.classList.add("opened");
+
+}
+</script>
+
+</body>
+</html>
